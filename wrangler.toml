@@ -1,0 +1,12 @@
+name = "reecog-website"
+main = "src/worker.js"
+compatibility_date = "2026-04-26"
+
+[assets]
+directory = "."
+not_found_handling = "single-page-application"
+
+[vars]
+# RESEND_API_KEY = ""
+# CONTACT_TO = ""
+# CONTACT_FROM = "Reecog <no-reply@reecog.com>"
