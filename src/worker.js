@@ -2,6 +2,10 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
+    if (request.method === "GET" && url.pathname === "/api/health") {
+      return jsonResponse({ ok: true }, 200);
+    }
+
     if (request.method === "POST" && url.pathname === "/api/contact") {
       return handleContact(request, env);
     }
