@@ -10,6 +10,20 @@ export default {
       return handleContact(request, env);
     }
 
+    if (env.ASSETS) {
+      const assetResponse = await env.ASSETS.fetch(request);
+
+      if (assetResponse.status !== 404) {
+        return assetResponse;
+      }
+
+      if (request.method === "GET" && acceptsHtml(request)) {
+        const indexUrl = new URL(request.url);
+        indexUrl.pathname = "/index.html";
+        return env.ASSETS.fetch(indexUrl.toString());
+      }
+    }
+
     return new Response("Not found", { status: 404 });
   }
 };
@@ -76,6 +90,11 @@ function jsonResponse(payload, status) {
     status,
     headers: { "Content-Type": "application/json" }
   });
+}
+
+function acceptsHtml(request) {
+  const accept = request.headers.get("accept") || "";
+  return accept.includes("text/html");
 }
 
 function toFormDataFromJson(data) {
