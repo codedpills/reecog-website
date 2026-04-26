@@ -1,6 +1,6 @@
 # Reecog Website
 
-Static site deployed on Cloudflare Workers with a Worker handler for the contact form.
+Static website deployed on Cloudflare Workers with a Worker handler for the contact form.
 
 ## Deploy to Cloudflare Workers
 
