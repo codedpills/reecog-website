@@ -479,6 +479,31 @@ a {
   max-width: 640px;
 }
 
+.form-message {
+  display: none;
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  font-weight: 600;
+  background: #ffffff;
+  border: 1px solid rgba(20, 36, 38, 0.15);
+}
+
+.form-message.is-visible {
+  display: block;
+}
+
+.form-message.is-success {
+  background: var(--teal-200);
+  color: var(--teal-900);
+  border-color: rgba(15, 107, 115, 0.25);
+}
+
+.form-message.is-error {
+  background: #ffe6e1;
+  color: #7a1d14;
+  border-color: rgba(122, 29, 20, 0.2);
+}
+
 .form label {
   font-weight: 600;
 }

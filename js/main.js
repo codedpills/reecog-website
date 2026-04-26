@@ -80,3 +80,61 @@ if (supportsHover) {
     wrapper.addEventListener("mousemove", moveLens);
   });
 }
+
+const contactForm = document.querySelector("form.form");
+
+if (contactForm && contactForm.getAttribute("action") === "/api/contact") {
+  const messageBox = contactForm.querySelector(".form-message");
+
+  const setMessage = (text, type) => {
+    if (!messageBox) {
+      return;
+    }
+
+    messageBox.textContent = text;
+    messageBox.classList.add("is-visible");
+    messageBox.classList.toggle("is-success", type === "success");
+    messageBox.classList.toggle("is-error", type === "error");
+  };
+
+  contactForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const submitButton = contactForm.querySelector("button[type=submit]");
+    const originalLabel = submitButton ? submitButton.textContent : "";
+
+    if (messageBox) {
+      messageBox.classList.remove("is-visible", "is-success", "is-error");
+      messageBox.textContent = "";
+    }
+
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = "Sending...";
+    }
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: "POST",
+        body: new FormData(contactForm)
+      });
+
+      const data = await response.json().catch(() => ({}));
+
+      if (response.ok && data.ok) {
+        setMessage("Thanks! Your message was sent successfully.", "success");
+        contactForm.reset();
+      } else {
+        const message = data.error || "Something went wrong. Please try again.";
+        setMessage(message, "error");
+      }
+    } catch (error) {
+      setMessage("Something went wrong. Please try again.", "error");
+    } finally {
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = originalLabel;
+      }
+    }
+  });
+}
