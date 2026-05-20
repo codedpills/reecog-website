@@ -34,7 +34,7 @@
     <main id="main" class="section">
       <div class="container">
         <h1>Privacy Policy</h1>
-        <p class="lead">Last updated: April 25, 2026</p>
+        <p class="lead">Last updated: May 20, 2026</p>
 
         <p>
           This Privacy Policy explains how Reecog ("we", "us", "our") collects,
@@ -51,40 +51,82 @@
 
         <h2>Information we collect</h2>
         <ul>
-          <li>Account and workspace information from Slack (workspace ID, user IDs, team domain).</li>
-          <li>Recognition activity (messages, points, values tags, rewards redemptions).</li>
-          <li>Configuration data (values list, reward catalog, admin settings).</li>
-          <li>Contact form submissions (name, work email, company size, message).</li>
-          <li>Usage data to keep the service reliable and improve features.</li>
+          <li><strong>Account and workspace information from Slack</strong> — workspace ID, user IDs, team domain.</li>
+          <li><strong>Recognition activity</strong> — messages containing recognition syntax, points awarded, value tags, timestamps, and reason text provided by the giving user.</li>
+          <li><strong>User point balances</strong> — total points, points by company value, daily recognition counts.</li>
+          <li><strong>Configuration data</strong> — company values list, reward catalog, daily limits, admin settings, GIF preferences.</li>
+          <li><strong>Billing information</strong> — subscription status, plan tier, billing period, and payment provider references (we do not store payment card details directly).</li>
+          <li><strong>Admin audit logs</strong> — records of which admin performed what configuration change, including timestamps and action details.</li>
+          <li><strong>Contact form submissions</strong> — name, work email, company size, message.</li>
+          <li><strong>Usage data</strong> — to keep the service reliable and improve features.</li>
         </ul>
 
         <h2>How we use information</h2>
         <ul>
-          <li>Provide and operate the Services.</li>
-          <li>Support recognition, points, rewards, and admin controls.</li>
+          <li>Provide and operate the Services, including recognition, points, rewards, and admin controls.</li>
+          <li>Enforce subscription tiers and workspace access limits.</li>
+          <li>Maintain admin audit trails for accountability and compliance.</li>
           <li>Communicate with you about support or product updates.</li>
           <li>Improve security, reliability, and user experience.</li>
         </ul>
 
         <h2>Legal bases (GDPR)</h2>
         <ul>
-          <li>Performance of a contract (to provide the Services).</li>
-          <li>Legitimate interests (service improvement, security, and analytics).</li>
-          <li>Consent (where required for communications or optional features).</li>
+          <li><strong>Performance of a contract</strong> — to provide the Services you have subscribed to.</li>
+          <li><strong>Legitimate interests</strong> — service improvement, security, fraud prevention, and analytics.</li>
+          <li><strong>Consent</strong> — where required for communications or optional features.</li>
         </ul>
 
         <h2>Data retention</h2>
         <p>
           We retain data as long as needed to provide the Services and comply with
-          legal obligations. You can request deletion of workspace data. Typical
-          retention: <strong>1 year</strong>.
+          legal obligations.
         </p>
+        <ul>
+          <li><strong>Recognition data and user records</strong> — retained while the workspace has an active installation.</li>
+          <li><strong>Audit logs</strong> — retained for up to 2 years for compliance purposes.</li>
+          <li><strong>Billing records</strong> — retained as required by applicable tax and accounting laws.</li>
+          <li><strong>On uninstall</strong> — when the app is uninstalled from a workspace, all workspace data (user records, configuration, subscriptions, and audit logs) is permanently and automatically deleted.</li>
+        </ul>
+        <p>
+          You may request deletion of your data at any time (see "Your rights" below).
+        </p>
+
+        <h2>Data deletion</h2>
+        <p>We provide multiple mechanisms for data removal:</p>
+        <ul>
+          <li><strong>Automatic full purge on uninstall</strong> — when you remove Reecog from your Slack workspace, all associated data is permanently deleted, including user records, configuration, subscriptions, and audit logs.</li>
+          <li><strong>Individual user deletion</strong> — any user can run <code>/points delete-my-data</code> to permanently delete their personal recognition data from the workspace. This action is irreversible.</li>
+          <li><strong>Data export</strong> — any user can run <code>/points export</code> to receive a copy of their personal data in JSON format before deletion (GDPR Article 20, data portability).</li>
+          <li><strong>Workspace admin requests</strong> — workspace admins may contact privacy@reecog.com to request bulk data operations.</li>
+        </ul>
 
         <h2>Data sharing</h2>
         <p>
           We do not sell personal data. We share data only with service providers
-          needed to run the Services (hosting, email delivery, database). We may
-          disclose information if required by law.
+          needed to run the Services:
+        </p>
+        <ul>
+          <li><strong>Hosting and database</strong> — cloud infrastructure providers.</li>
+          <li><strong>Giphy</strong> — when GIF celebrations are enabled, we send only the company value tag (e.g., "teamwork") to the Giphy API. We never send recognition reason text or user identifiers to Giphy.</li>
+          <li><strong>Payment processing</strong> — LemonSqueezy handles subscription billing. We share your workspace ID with the payment provider to link subscriptions.</li>
+        </ul>
+        <p>We may disclose information if required by law.</p>
+
+        <h2>Security</h2>
+        <p>We implement the following security measures:</p>
+        <ul>
+          <li><strong>Token encryption at rest</strong> — Slack bot tokens are encrypted using AES-256-GCM before storage.</li>
+          <li><strong>Webhook signature verification</strong> — all incoming Slack webhooks and billing webhooks are validated using HMAC-SHA256 signatures.</li>
+          <li><strong>Database encryption in transit</strong> — SSL/TLS connections are enforced for database communication in production.</li>
+          <li><strong>Rate limiting</strong> — API endpoints are protected against abuse.</li>
+          <li><strong>Replay protection</strong> — billing webhook events are deduplicated to prevent replay attacks.</li>
+          <li><strong>Parameterized queries</strong> — all database queries use parameterized statements to prevent SQL injection.</li>
+          <li><strong>Security headers</strong> — HTTP security headers (via helmet) are applied to all responses.</li>
+        </ul>
+        <p>
+          No method of transmission or storage is 100% secure. If you become aware
+          of a security vulnerability, please contact privacy@reecog.com immediately.
         </p>
 
         <h2>International transfers</h2>
@@ -95,30 +137,39 @@
         </p>
 
         <h2>Your rights</h2>
+        <p>Depending on your jurisdiction, you may have the following rights:</p>
         <ul>
-          <li>Access, correction, and deletion of your data.</li>
-          <li>Restriction or objection to processing.</li>
-          <li>Data portability where applicable.</li>
-          <li>Withdraw consent at any time.</li>
+          <li><strong>Access</strong> — request a copy of data we hold about you (or use <code>/points export</code>).</li>
+          <li><strong>Correction</strong> — request correction of inaccurate data.</li>
+          <li><strong>Deletion</strong> — request deletion of your data (or use <code>/points delete-my-data</code>).</li>
+          <li><strong>Restriction or objection</strong> — restrict or object to certain processing.</li>
+          <li><strong>Data portability</strong> — receive your data in a structured, machine-readable format.</li>
+          <li><strong>Withdraw consent</strong> — at any time, where consent is the legal basis.</li>
         </ul>
+        <p>
+          To exercise these rights, contact privacy@reecog.com or use the in-app
+          commands described above.
+        </p>
 
         <h2>US privacy rights</h2>
         <p>
           If you are a California resident, you may have rights under the CCPA/CPRA,
           including the right to access and delete personal information. We do not
-          sell personal information.
-        </p>
-
-        <h2>Security</h2>
-        <p>
-          We use reasonable administrative, technical, and physical safeguards to
-          protect information. No method of transmission or storage is 100% secure.
+          sell personal information. We do not use personal information for targeted
+          advertising.
         </p>
 
         <h2>Children</h2>
         <p>
           Reecog is not intended for children under 16. We do not knowingly
           collect personal data from children.
+        </p>
+
+        <h2>Changes</h2>
+        <p>
+          We may update this Privacy Policy from time to time. Material changes
+          will be posted on this page with an updated "Last updated" date.
+          Continued use of the Services after changes constitutes acceptance.
         </p>
 
         <h2>Contact</h2>

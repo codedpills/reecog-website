@@ -34,7 +34,7 @@
     <main id="main" class="section">
       <div class="container">
         <h1>Terms of Service</h1>
-        <p class="lead">Last updated: April 11, 2026</p>
+        <p class="lead">Last updated: May 20, 2026</p>
 
         <p>
           These Terms of Service ("Terms") govern your access to and use of the
@@ -55,61 +55,152 @@
         <h2>Accounts and access</h2>
         <p>
           You are responsible for maintaining the security of your Slack workspace
-          and any credentials used to access the Services.
+          and any credentials used to access the Services. Workspace administrators
+          are responsible for managing user access and configuration within their
+          workspace.
         </p>
 
         <h2>Acceptable use</h2>
         <ul>
           <li>Do not misuse the Services or interfere with normal operation.</li>
-          <li>Do not attempt to access data without authorization.</li>
+          <li>Do not attempt to access data belonging to other workspaces without authorization.</li>
           <li>Do not use the Services to violate laws or third-party rights.</li>
+          <li>Do not use automated tools to spam recognition commands or abuse rate limits.</li>
+          <li>Do not include sensitive personal information (health data, financial details, government IDs) in recognition reason text.</li>
         </ul>
 
-        <h2>Pricing and billing</h2>
+        <h2>Recognition content</h2>
         <p>
-          Pricing is per workspace and may change with prior notice. If you choose
-          paid plans, you agree to pay fees according to the billing terms.
+          When you give recognition using Reecog, the reason text you provide is
+          stored and visible to members of your workspace. You are responsible for
+          the content of your recognition messages. Do not include content that is:
         </p>
+        <ul>
+          <li>Harassing, discriminatory, or abusive.</li>
+          <li>Confidential or proprietary without authorization.</li>
+          <li>Illegal or in violation of third-party rights.</li>
+        </ul>
+        <p>
+          Workspace administrators may reset points and manage configuration but
+          cannot edit individual recognition reason text.
+        </p>
+
+        <h2>Pricing and billing</h2>
+        <ul>
+          <li>Pricing is per workspace, based on workspace member count, and is available in tiered plans.</li>
+          <li>Plan tiers: up to 25 members, 25–100 members, and 100+ members.</li>
+          <li>Billing is handled through our payment provider (LemonSqueezy).</li>
+          <li>Prices may change with at least 30 days prior notice.</li>
+          <li>If your workspace member count exceeds your current plan tier, you will receive a notice to upgrade.</li>
+          <li>A 7-day grace period applies when a plan expires or requires an upgrade.</li>
+        </ul>
 
         <h2>Free trial</h2>
         <p>
-          Reecog offers a 30-day free trial. At the end of the trial, you may
-          choose a paid plan to continue.
+          Reecog offers a 30-day free trial for new workspace installations. During
+          the trial, all features are available without payment. At the end of the
+          trial, you may choose a paid plan to continue using the Services. If no
+          plan is selected, access to recognition and redemption features will be
+          paused.
         </p>
 
-        <h2>Termination</h2>
+        <h2>Data ownership and portability</h2>
+        <ul>
+          <li><strong>Your data belongs to you.</strong> Recognition data, configuration, and user records belong to the workspace and its users.</li>
+          <li><strong>Export</strong> — any user can export their personal data at any time using <code>/points export</code>.</li>
+          <li><strong>Deletion</strong> — any user can permanently delete their data using <code>/points delete-my-data</code>. This action is irreversible.</li>
+          <li><strong>Uninstall purge</strong> — when Reecog is removed from your Slack workspace, all workspace data is permanently and automatically deleted from our systems.</li>
+        </ul>
+
+        <h2>Admin responsibilities</h2>
+        <p>Workspace administrators have elevated privileges including:</p>
+        <ul>
+          <li>Resetting individual or all user points.</li>
+          <li>Adding/removing company values and rewards.</li>
+          <li>Configuring daily limits, GIF settings, and point labels.</li>
+        </ul>
         <p>
-          You may stop using the Services at any time. We may suspend or terminate
-          access if you violate these Terms.
+          All admin actions are logged in an audit trail. Administrators should use
+          these privileges responsibly and in accordance with their organization's
+          policies.
         </p>
+
+        <h2>Service availability</h2>
+        <ul>
+          <li>We aim for high availability but do not guarantee uninterrupted service.</li>
+          <li>We may perform maintenance with reasonable notice when possible.</li>
+          <li>Slack platform outages are outside our control and do not constitute a breach of these Terms.</li>
+        </ul>
+
+        <h2>Termination</h2>
+        <ul>
+          <li><strong>By you</strong> — you may stop using the Services at any time by uninstalling the app from your Slack workspace. All data will be purged upon uninstall.</li>
+          <li><strong>By us</strong> — we may suspend or terminate access if you violate these Terms, engage in abusive behavior, or if required by law. We will provide reasonable notice where possible.</li>
+          <li><strong>Effect of termination</strong> — upon termination, your right to use the Services ceases. Data deletion follows our Privacy Policy.</li>
+        </ul>
 
         <h2>Intellectual property</h2>
         <p>
-          The Services and related content are owned by Reecog or licensors. You
-          may not copy, modify, or redistribute them without permission.
+          The Services and related content (including branding, documentation, and
+          code) are owned by Reecog or its licensors. You may not copy, modify, or
+          redistribute them without permission. Your recognition content remains
+          yours.
         </p>
 
         <h2>Disclaimer</h2>
         <p>
-          The Services are provided "as is" without warranties of any kind. We do
-          not guarantee that the Services will be uninterrupted or error-free.
+          The Services are provided "as is" and "as available" without warranties
+          of any kind, express or implied. We do not guarantee that the Services
+          will be uninterrupted, error-free, or free from harmful components.
         </p>
 
         <h2>Limitation of liability</h2>
         <p>
           To the maximum extent permitted by law, Reecog is not liable for any
-          indirect, incidental, or consequential damages.
+          indirect, incidental, special, or consequential damages arising from your
+          use of the Services, including but not limited to loss of data, loss of
+          profits, or business interruption.
+        </p>
+        <p>
+          Our total liability for any claim arising from these Terms or the Services
+          shall not exceed the amounts you paid to Reecog in the 12 months
+          preceding the claim.
+        </p>
+
+        <h2>Indemnification</h2>
+        <p>
+          You agree to indemnify and hold Reecog harmless from any claims, damages,
+          or expenses arising from your violation of these Terms or misuse of the
+          Services.
         </p>
 
         <h2>Governing law</h2>
         <p>
-          These Terms are governed by the laws of <strong>the jurisdiction where Reecog is established</strong>.
+          These Terms are governed by the laws of the jurisdiction where Reecog is
+          established, without regard to conflict of law principles.
+        </p>
+
+        <h2>Dispute resolution</h2>
+        <p>
+          Any disputes arising from these Terms shall first be attempted to be
+          resolved through good-faith negotiation. If unresolved after 30 days,
+          disputes may be submitted to binding arbitration or the courts of
+          competent jurisdiction.
         </p>
 
         <h2>Changes</h2>
         <p>
           We may update these Terms from time to time. Material changes will be
-          posted on this page.
+          posted on this page with an updated "Last updated" date. If changes
+          materially reduce your rights, we will provide at least 30 days notice
+          via email or in-app notification. Continued use of the Services after the
+          effective date constitutes acceptance.
+        </p>
+
+        <h2>Contact</h2>
+        <p>
+          For questions about these Terms, contact
+          <strong>privacy@reecog.com</strong>.
         </p>
       </div>
     </main>
